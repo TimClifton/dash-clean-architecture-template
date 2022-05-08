@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "venv\\Scripts\\python.exe"
+    "python.pythonPath": "venv\\Scripts\\python.exe",
+    "appService.defaultWebAppToDeploy": "/subscriptions/165f88fb-d987-4882-8c1b-b2d43a431b84/resourceGroups/DefaultResourceGroup-SEAU/providers/Microsoft.Web/sites/Westwind-DashApp",
+    "appService.deploySubpath": "."
 }
