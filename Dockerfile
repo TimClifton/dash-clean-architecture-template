@@ -1,16 +1,20 @@
-FROM python:3.8-slim
+FROM python:3.9-slim
 
-WORKDIR /code
+#WORKDIR /code
 
-COPY requirements.txt /
+RUN mkdir /app
 
-RUN pip install -r /requirements.txt \
+COPY requirements.txt /app/
+
+RUN pip install -r app/requirements.txt \
 	&& rm -rf /root/.cache
 
-COPY ./ ./
+COPY . /app/
 
-ENV ENVIRONMENT_FILE=".env"
+WORKDIR /app
 
-EXPOSE 8085
+#ENV ENVIRONMENT_FILE=".env"
+
+EXPOSE 8000
 
 ENTRYPOINT ["gunicorn", "--config", "gunicorn_config.py", "index:server"]
