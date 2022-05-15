@@ -11,6 +11,6 @@ from pages.iris.iris_callbacks import make_graph
 
 
 if __name__ == "__main__":
-    app.run_server(
+    app.run_server(port=8000
 
     )
